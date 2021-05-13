@@ -1,6 +1,9 @@
-# GUI-projects
 from tkinter import *
+import random
 
+myRolls = []
+rollTimes = 0
+dieType = 0
 top = Tk()
 groceryList = []
 def result():
@@ -59,6 +62,21 @@ def week1():
     B5.grid(column = 0, row = 7)
 
 def week2():
+    def rollDice():
+        dieType = E1.get()
+        rollTimes = E2.get()
+        clearWindow()
+        for x in range(0, int(rollTimes)):
+            myRolls.append(random.randint(1, int(dieType)))
+        L4 = Label(top, text = "Your rolls:")
+        L4.grid(column = 0, row = 0)
+        
+        L5 = Label(top, text = "{}".format(myRolls))
+        L5.grid(column = 0, row = 1)
+        
+        B2 = Button(text = "Main", bg = "#000bfe", command = mainMenu, fg = "White", font = ("Times", 11, "italic"))
+        B2.grid(column = 0, row = 2)
+        
     clearWindow()
     L1 = Label(top, text = "Dice Roller")
     L1.grid(column = 1, row = 0)
@@ -72,10 +90,10 @@ def week2():
     E1 = Entry(top, bd = 4, relief = "ridge")
     E1.grid(column = 0, row = 2)
 
-    E1 = Entry(top, bd = 4, relief = "ridge")
-    E1.grid(column = 3, row = 2)
+    E2 = Entry(top, bd = 4, relief = "ridge")
+    E2.grid(column = 3, row = 2)
 
-    B1 = Button(text = " Roll! ", bg = "#000bfe", fg = "White", font = ("Times", 11, "italic"))
+    B1 = Button(text = " Roll! ", bg = "#000bfe", command = rollDice, fg = "White", font = ("Times", 11, "italic"))
     B1.grid(column = 1, row = 4)
     
     #command =
