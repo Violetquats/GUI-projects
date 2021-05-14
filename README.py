@@ -74,8 +74,8 @@ def week2():
         L5 = Label(top, text = "{}".format(myRolls))
         L5.grid(column = 0, row = 1)
         
-        B2 = Button(text = "Main", bg = "#000bfe", command = mainMenu, fg = "White", font = ("Times", 11, "italic"))
-        B2.grid(column = 0, row = 2)
+        B3 = Button(text = "Main", bg = "#000fbe", command = mainMenu, fg = "White", font = ("Times", 11, "italic"))
+        B3.grid(column = 0, row = 2)
         
     clearWindow()
     L1 = Label(top, text = "Dice Roller")
@@ -95,7 +95,10 @@ def week2():
 
     B1 = Button(text = " Roll! ", bg = "#000bfe", command = rollDice, fg = "White", font = ("Times", 11, "italic"))
     B1.grid(column = 1, row = 4)
-    
+
+    B2 = Button(text = " Main ", bg = "#00befe", command = mainMenu, fg = "White", font = ("Times", 11, "italic"))
+    B2.grid(column = 1, row = 5)
+
     #command =
 
 
