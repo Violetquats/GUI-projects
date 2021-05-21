@@ -6,6 +6,7 @@ rollTimes = 0
 dieType = 0
 top = Tk()
 groceryList = []
+numberList = []
 def result():
     print(groceryList)
 
@@ -28,7 +29,7 @@ def mainMenu():
     B2Main = Button(text = " Week 2 ", bg = "#000eff", command = week2, fg = "White", font = ("Times", 11, "italic"))
     B2Main.grid(column = 1, row = 3)
     
-    B3Main = Button(text = " Week 3 ", bg = "#00beff", font =("Times", 11, "italic"), fg = "White")
+    B3Main = Button(text = " Week 3 ", bg = "#00beff", command = week3, font =("Times", 11, "italic"), fg = "White")
     B3Main.grid(column = 1, row = 4)
 
 def week1():
@@ -99,8 +100,33 @@ def week2():
     B2 = Button(text = " Main ", bg = "#00befe", command = mainMenu, fg = "White", font = ("Times", 11, "italic"))
     B2.grid(column = 1, row = 5)
 
-    #command =
+def week3():
+    def addToList():
+        def reallyAddToList():
+            newItem = E1.get()
+            numberList.append(newItem)
+            E1.delete(0, END)
 
+            L1 = Label(top, text = "Your list:")
+            L1.grid(column = 0, row = 0)
+    
+            L2 = Label(top, text = "{}".format(numberList))
+            L2.grid(column = 0, row = 1)
+            
+        E1 = Entry(top, bd = 5, relief = "ridge")
+        E1.grid(column = 0, row = 2)
+
+        B1 = Button(text = " Add number to list ", bg = "#000bfe", command = reallyAddToList, fg = "White", font = ("Times", 11, "italic"))
+        B1.grid(column = 0, row = 3)
+
+        B1 = Button(text = " Main ", bg = "#00beff", command = mainMenu, fg = "White", font = ("Times", 11, "italic"))
+        B1.grid(column = 0, row = 4)
+    def sortList():
+       print("hi") 
+        
+            
+    clearWindow()
+    addToList()
 
 if __name__ == "__main__":
     mainMenu()
